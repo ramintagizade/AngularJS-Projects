@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <head >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <title>AngularJS Directives and Controller  </title>
+  </head>
+  <body>
+    <div ng-controller="SimpleController" ng-app="myApp">
+      Name: </br>
+      <input type="text" ng-model="name"/>
+      <ul>
+        <li ng-repeat="cust in customers | filter:name | orderBy:'city'">{{cust.name|uppercase}}-{{cust.city | lowercase}}</li>
+      </ul>
+    </div>
+      <script>
+          var app = angular.module('myApp', []);
+          app.controller('SimpleController', function($scope) {
+            console.log('its ok');
+            $scope.customers = [
+              {name:'Ramin Taghizada',city:'Manchester'},
+              {name:'Mary Doe',city:'London'},
+              {name:'Mary Smith',city:'Liverpool'}
+            ];
+        });
+      </script>
+  </body>
+</html>

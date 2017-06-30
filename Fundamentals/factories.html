@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <meta charset="utf-8">
+  <head >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+    <title>AngularJS Directives and Routes  </title>
+  </head>
+  <body>
+    <div ng-view>
+
+    </div>
+      <script>
+          var app = angular.module('myApp', ["ngRoute"]);
+          app.config(function($routeProvider){
+            "use strict";
+            $routeProvider
+              .when('/view1',{controller:'SimpleController',templateUrl:'Partials/view1.html'})
+              .when('/view2',{controller:'SimpleController',templateUrl:'Partials/view2.html'})
+              .otherwise({redirectTo:'/view1'});
+          });
+          app.factory('simpleFactory',function(){
+            var customers = [
+              {name:'Ramin Taghizada',city:'Manchester'},
+              {name:'Mary Doe',city:'London'},
+              {name:'Mary Smith',city:'Liverpool'}
+            ];
+            var factory = {};
+            factory.getCustomers = function(){
+              return customers;
+            }
+            return factory;
+          });
+
+
+          app.controller('SimpleController', function($scope,simpleFactory) {
+            $scope.customers = simpleFactory.getCustomers();
+            $scope.addCustomer =  function(){
+              $scope.customers.push({name:$scope.newCustomer.name,city:$scope.newCustomer.city});
+            }
+        });
+      </script>
+  </body>
+</html>

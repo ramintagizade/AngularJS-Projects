@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+  <meta charset="utf-8">
+  <head>
+    <title>AngularJS Directives and Data filters  </title>
+  </head>
+  <body>
+    <div class="container" ng-init="customers=[{name:'Ramin Taghizada',city:'Manchester'},{name:'Mary Doe',city:'London'},{name:'Mary Smith',city:'Liverpool'}]">
+      Name: </br>
+      <input type="text" ng-model="name"/>{{name}}
+      <ul>
+        <li ng-repeat="cust in customers | filter:name | orderBy:'city'">{{cust.name|uppercase}}-{{cust.city | lowercase}}</li>
+      </ul>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+</html>
