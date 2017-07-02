@@ -1,0 +1,58 @@
+.container{
+  margin-top: 20px;
+}
+.logo{
+  width:70px;
+  vertical-align:text-top;
+  float: left;
+}
+.customer-header{
+  position: static;
+  margin-top: -20px;
+}
+.custmantit{
+  line-height: 80px;
+  vertical-align:middle;
+  font-size: 1.3em;
+  display: inline;
+  padding-right: 60px;
+  padding-left: 0px;
+  color: gray;
+}
+input{
+  width: 250px;
+}
+.customer-col{
+  width: 300px;
+  border: 1px solid #333;
+}
+.customer-name{
+  background-color: #89c4ea;
+  font-size: 0.5em;
+}
+.customer-order{
+  color:blue;
+  font-size: 0.5em;
+}
+.customer-city{
+  font-size: 0.5em;
+}
+.add_customer{
+  font-size: 0.5em;
+}
+.add_customer2{
+  font-size: 0.5em;
+  line-height:3.3;
+  vertical-align:bottom;
+}
+.orders{
+  margin-left: 30px;
+}
+.td1{
+  width: 250px;
+}
+.td2{
+  background-color:#89c4ea;
+  width:1000px;
+  text-indent:750px;
+}

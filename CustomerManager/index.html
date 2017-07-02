@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+     <title>Customer Manager</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="index.css">
+  </head>
+  <body >
+    <div class="container">
+      <div class="nav-tabs">
+      <div class="navbar-header customer-header">
+      <a class="navbar-brand " href="#">
+        <img class="logo" alt="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81REBPmIpjxaSl0ESob3TVOaDySVrF0TC2Hm8DI9ldeEbM9wP">
+      </a>
+        <p class="custmantit">Customer Manager </p>
+      </div>
+      <ul class="nav nav-pills" style= "border-bottom: 1px solid #ddd" ng-controller="SimpleController" ng-init="states.active=0">
+        <li ng-repeat= "menu in menus" ng-class="{'active':$index==states.active}" ng-click="states.active=$index" role="presentation" > <a href="#!{{menu.url}}">{{menu.name}}</a> </li>
+
+      </ul>
+    </div>
+
+    </div>
+    <div ng-view></div>
+  </body>
+  <script src="app.js"></script>
+</html>

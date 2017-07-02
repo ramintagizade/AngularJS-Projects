@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>All Customer Orders</h1>
+  <div class="orders">
+    <div class="row" ng-repeat="order in orders">
+      <p style="color:blue;font-weight:bold">{{order.user}}</p>
+      <table border="1">
+        <tr style="background-color:blue;color:white">
+          <th>Product</th>
+          <th >Quantity</th>
+          <th >Unit Price</th>
+          <th>Total</th>
+        </tr>
+        <tr ng-repeat="item in order.product" >
+          <td class="td1">{{item.name}}</td>
+          <td class="td1">{{item.quantity}}</td>
+          <td class="td1">{{item.unit_price}}</td>
+          <td class="td1">${{getTotal(item.quantity,item.unit_price)}}</td>
+          <table border="1">
+            <td class="td2">${{getTotalResult(order.product)}}</td>
+          </table>
+        </tr>
+      <table>
+        </br></br>
+    </div>
+  </div>
+</div>
